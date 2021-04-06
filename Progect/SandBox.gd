@@ -20,8 +20,8 @@ func generate_island():
 	
 	noise.seed =randi()
 	
-	noise.octaves = 6
-	noise.period =40
+	noise.octaves = 6#        Это Важно
+	noise.period =40#         Это Важно
 	
 	surface_tool.create_from(plane_mesh,0)
 	var array_mash = surface_tool.commit()
@@ -64,7 +64,7 @@ func generate_island():
 	mesh_instance.mesh = surface_tool.commit()
 	
 	var material =SpatialMaterial.new()
-	material.albedo_color = Color(0.0,0.8,0.4)
+	material.albedo_color = Color(0.0,0.3,0.0)
 	
 	mesh_instance.material_override = material
 	mesh_instance.create_trimesh_collision()

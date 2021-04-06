@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Water"
-run/main_scene="res://Water.tscn"
+run/main_scene="res://Main Menu.tscn"
 config/icon="res://icon.png"
 
 [rendering]
