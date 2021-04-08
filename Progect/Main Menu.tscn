@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Pirate-menu.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Island_menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://New Game.gd" type="Script" id=3]
+[ext_resource path="res://Bsand.gd" type="Script" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+func _pressed():
+	get_tree().quit()
+"
+
+[node name="Main Menu" type="Spatial"]
+
+[node name="Spatial" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.966935, 0.255024, 0, -0.255024, 0.966935, 0, 3.87945, 32.0111 )
+fov = 60.0
+
+[node name="New Game" type="Button" parent="."]
+anchor_left = 0.798775
+anchor_top = 0.283173
+anchor_right = 1.00233
+anchor_bottom = 0.373173
+margin_left = 0.435364
+margin_top = -0.0519104
+margin_bottom = -0.0519104
+text = "New Game"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="."]
+anchor_left = 0.798
+anchor_top = 0.615992
+anchor_right = 1.00078
+anchor_bottom = 0.707653
+margin_left = -0.358337
+margin_top = -0.00323486
+text = "EXIT"
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.797
+anchor_top = 0.455
+anchor_right = 1.0
+anchor_bottom = 0.528
+margin_left = -0.128052
+margin_bottom = 10.2
+text = "SandBox"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
